@@ -5,27 +5,33 @@ from django.contrib.auth.models import User
 
 class Map(models.Model):
     name = models.CharField(max_length=50)
-    user = models.ForeignKey(User, on_delete="Cascade")
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     current_water = models.IntegerField(default=0)
+    time_created = models.DateTimeField()
+    notes = models.TextField()
+    s = models.FloatField(default=0)
 
 
 class Part(models.Model):
-    map = models.ForeignKey(Map, on_delete="Cascade")
+    map = models.ForeignKey(Map, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
+    x = models.IntegerField()
+    y = models.IntegerField()
+    s = models.FloatField(default=0)
 
 
-class Col:
+class Col(models.Model):
     size = models.FloatField()
-    master = models.ForeignKey(Part, on_delete="Cascade")
+    master = models.ForeignKey(Part, on_delete=models.CASCADE)
 
 
-class Row:
-    master = models.ForeignKey(Part, on_delete="Cascade")
+class Row(models.Model):
+    master = models.ForeignKey(Part, on_delete=models.CASCADE)
     size = models.FloatField()
 
 
-class Watered:
+class Watered(models.Model):
     date = models.DateField()
-    col = models.ForeignKey(Col, on_delete="Cascade")
-    row = models.ForeignKey(Row, on_delete="Cascade")
+    col = models.ForeignKey(Col, on_delete=models.CASCADE)
+    row = models.ForeignKey(Row, on_delete=models.CASCADE)
     number = models.IntegerField()
