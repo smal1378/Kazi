@@ -10,6 +10,7 @@ class Map(models.Model):
     time_created = models.DateTimeField()
     notes = models.TextField()
     s = models.FloatField(default=0)
+    rank = models.IntegerField(default=0)
 
 
 class Part(models.Model):
