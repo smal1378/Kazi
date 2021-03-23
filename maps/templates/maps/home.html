@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="FA">
 <head>
     <meta charset="UTF-8">
     <title>Kazi</title>
 </head>
 <body>
     Kazi :)
+    <hr>
+    {% if not request.user.is_authenticated %}
+    <p>لطفا وارد شوید</p>
+    {# commnent #}
+    {% endif %}
+    {{ request.user.is_authenticated }}
 </body>
 </html>
