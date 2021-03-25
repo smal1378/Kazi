@@ -1,3 +1,4 @@
 .idea/*
 maps/__pycache__/*
 kazi/__pycache__/*
+maps/migrations/__pycache__/*
