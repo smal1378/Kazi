@@ -24,3 +24,5 @@ def home_view(request):
     return render(request, "maps/home.html", {"maps": maps, "page": page, "total_pages": pages,
                                               "user": user})
 
+
+

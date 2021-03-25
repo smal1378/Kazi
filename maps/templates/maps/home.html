@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Kazi</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'maps/home.css' %}">
 </head>
-<body>
+<body class="test">
     {% for map in maps %}
 
     <div style="text-align: center">
