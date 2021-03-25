@@ -5,6 +5,33 @@
     <title>Kazi</title>
 </head>
 <body>
-    Kazi :)
+    {% for map in maps %}
+
+    <div style="text-align: center">
+    =========================================<br>
+        {{map.name}}<br>
+        {{map.user.username}}<br>
+        {{map.current_water}}<br>
+        {{map.time_created}}<br>
+        {{map.notes}}<br>
+        {{map.s}}<br>
+    </div>
+    {% endfor %}
+    <hr>
+    <div>
+        page: {{page}}/ {{total_pages}}
+        <form method="post">
+            {% csrf_token %}
+            <button name="next" id="next">Next</button>
+            <button name="prev" id="prev">Prev</button>
+            <input type="hidden" name="page" value="{{page}}">
+        </form>
+    </div>
+
+    <hr>
+    <div>
+        user: {{user}}
+    </div>
+
 </body>
 </html>
