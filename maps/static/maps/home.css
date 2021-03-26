@@ -1,7 +1,42 @@
-
-.test{
-    background-color: #edf5ff;
+* {
+    direction: rtl;
+    box-sizing: border-box;
 }
-
-
-
+a {
+    text-decoration: none;
+}
+.header {
+    background-color: forestgreen;
+    padding: 30px;
+    margin: auto;
+}
+.header a {
+    color: white;
+}
+.map {
+    border: green 1px solid;
+    padding: 30px;
+    margin: 30px;
+    overflow: hidden;
+}
+.map h2 {
+    text-align: center;
+}
+.map .picture, .info {
+    float: right;
+    border: black 1px solid;
+}
+.map .info {
+    margin: 20px;
+    width: 850px;
+    padding: 20px;
+}
+.map p.more_info {
+    display: inline;
+    margin-left: 50px;
+}
+.map .picture {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+}
