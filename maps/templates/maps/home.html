@@ -36,6 +36,15 @@
     </div>
     <!-- map -->
     {% endfor %}
+    <div class="pagination">
+        page: {{page}}/ {{total_pages}}
+        <form method="post">
+            {% csrf_token %}
+            <button name="next" id="next">Next</button>
+            <button name="prev" id="prev">Prev</button>
+            <input type="hidden" name="page" value="{{page}}">
+        </form>
+    </div>
 
 </body>
 </html>

@@ -40,3 +40,7 @@ a {
     height: 200px;
     margin: 20px;
 }
+.pagination {
+    width: 300px;
+    margin: auto;
+}
