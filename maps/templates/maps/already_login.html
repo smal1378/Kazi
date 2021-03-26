@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <hr>
+    <div style="text-align: center">
+        You are already logged in as <a href="{% url 'profile' %}">{{user}}</a><br>
+        <a href="{% url 'logout' %}">logout</a>
+    </div>
+    <hr>
+</body>
+</html>

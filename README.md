@@ -16,8 +16,12 @@ Telegram: t.me/smal1378
         - page: presenting current page number.
         - total_pages: presenting all pages count.
         - user: containg name of user or None.
-
-
+    login_view (already_login.html):
+        - user: username of currently logged in user
+    login_view (login.html):
+        - error: 0 means no error, if 1: invalid user or pass
+    login_view (bad_request.html):
+        no context passed to, this page is used to show bad request.
 
 #
 ##### Models Available:
