@@ -1,26 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="FA">
 <head>
     <meta charset="UTF-8">
     <title>Kazi</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'maps/home.css' %}">
 </head>
-<body class="test">
-    {% for map in maps %}
-
-    <div style="text-align: center">
-    =========================================<br>
-        {{map.name}}<br>
-        {{map.user.username}}<br>
-        {{map.current_water}}<br>
-        {{map.time_created}}<br>
-        {{map.notes}}<br>
-        {{map.s}}<br>
+<body>
+    <div class="header">
+        <div>
+            {% if user is none %}
+                <a href="#">ورود به حساب</a>
+            {% else %}
+                <a href="#">{{ user }}</a>
+            {% endif %}
+        </div>
+        <!-- .username -->
     </div>
+    <!-- .header -->
+    {% for map in maps %}
+    <div class="map">
+        <a href="#"><h2>{{ map.name }}</h2></a>
+        <div class="info">
+            <p>{{ map.notes }}</p>
+            <br>
+            <p class="more_info">تاریخ اضافه شدن: {{ map.time_created }}</p>
+            <p class="more_info">مساحت: {{ map.s }} هکتار</p>
+            <p class="more_info">مالک {{ map.user.username }}</p>
+        </div>
+        <!-- .info -->
+        <div class="picture">
+            here must be a picture
+        </div>
+        <!-- .picture -->
+    </div>
+    <!-- map -->
     {% endfor %}
-    <hr>
-    <div>
+    <div class="pagination">
         page: {{page}}/ {{total_pages}}
         <form method="post">
             {% csrf_token %}
@@ -28,11 +44,6 @@
             <button name="prev" id="prev">Prev</button>
             <input type="hidden" name="page" value="{{page}}">
         </form>
-    </div>
-
-    <hr>
-    <div>
-        user: {{user}}
     </div>
 
 </body>
