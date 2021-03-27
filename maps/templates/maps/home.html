@@ -10,7 +10,7 @@
     <div class="header">
         <div>
             {% if user is none %}
-                <a href="#">ورود به حساب</a>
+                <a href="{% url 'login' %}">ورود به حساب</a>
             {% else %}
                 <a href="#">{{ user }}</a>
             {% endif %}
@@ -45,6 +45,6 @@
             <input type="hidden" name="page" value="{{page}}">
         </form>
     </div>
-
+    <!--pagination -->
 </body>
 </html>
