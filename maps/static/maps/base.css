@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: green;
+    padding: 50px;
+}
+footer {
+    background-color: green;
+    padding: 50px;
+}
