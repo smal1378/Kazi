@@ -1,23 +1,16 @@
 <!DOCTYPE html>
 <html lang="FA">
 <head>
+    {% extends "maps/base.html" %}
     <meta charset="UTF-8">
-    <title>Kazi</title>
     {% load static %}
+    {% block link_css %}
     <link rel="stylesheet" href="{% static 'maps/home.css' %}">
+    {% endblock %}
+    <title>{% block title %} Kazi | Home {% endblock %}</title>
 </head>
 <body>
-    <div class="header">
-        <div>
-            {% if user is none %}
-                <a href="{% url 'login' %}">ورود به حساب</a>
-            {% else %}
-                <a href="#">{{ user }}</a>
-            {% endif %}
-        </div>
-        <!-- .username -->
-    </div>
-    <!-- .header -->
+    {% block content %}
     {% for map in maps %}
     <div class="map">
         <a href="#"><h2>{{ map.name }}</h2></a>
@@ -46,5 +39,7 @@
         </form>
     </div>
     <!--pagination -->
+    {% endblock %}
+
 </body>
 </html>

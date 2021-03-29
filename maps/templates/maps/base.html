@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'maps/base.css' %}">
+    {% block link_css %}
+    {% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% block header %}
+        <header>
+        <div>
+            {% if user is none %}
+                <a href="{% url 'login' %}">ورود به حساب</a>
+            {% else %}
+                <a href="#">{{ user }}</a>
+            {% endif %}
+        </div>
+        <!-- .username -->
+        </header>>
+    <!-- .header -->
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block footer %}
+    <footer>
+
+    </footer>
+    {% endblock %}
+</body>
+</html>
