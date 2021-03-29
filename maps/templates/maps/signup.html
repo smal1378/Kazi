@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kazi - Signup</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username">
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password">
+        <label for="r_password">Repeat Password:</label>
+        <input type="password" name="r_password" id="r_password">
+        {% if error == 1 %}
+        Username already exists.
+        {% elif error == 2 %}
+        Passwords didn't match.
+        {% endif %}
+        <button type="submit">Signup</button>
+    </form>
+</body>
+</html>

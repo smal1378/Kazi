@@ -22,6 +22,9 @@ Telegram: t.me/smal1378
         - error: 0 means no error, if 1: invalid user or pass
     login_view (bad_request.html):
         no context passed to, this page is used to show bad request.
+    signup_view (signup.html):
+        - user: username of currently logged in user or None
+        - error: if 1 means username is taken, 2 means passwords didnt match, None means no error
 
 #
 ##### Models Available:
