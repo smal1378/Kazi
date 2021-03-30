@@ -1,15 +1,13 @@
-* {
-    direction: rtl;
-    box-sizing: border-box;
-}
-a {
-    text-decoration: none;
+#home_container {
+    max-width: 1000px;
+    margin: auto;
 }
 .map {
     border: green 1px solid;
     padding: 30px;
     margin: 30px;
     overflow: hidden;
+    background: none white;
 }
 .map h2 {
     text-align: center;
@@ -23,7 +21,6 @@ a {
     padding: 20px;
 }
 .map p.more_info {
-    display: inline;
     margin-left: 50px;
 }
 .map .picture {
