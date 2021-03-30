@@ -2,9 +2,14 @@
     margin: 0;
     padding: 0;
 }
-header {
-    background-color: green;
-    padding: 50px;
+#main_header {
+    background-color: pink;
+    padding: 60px;
+}
+#header_container {
+    max-width: 800px;
+    margin: auto;
+    overflow: auto;
 }
 header a {
     color: white;
