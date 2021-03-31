@@ -1,3 +1,10 @@
+* {
+    direction: rtl;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
 #home_container {
     max-width: 1000px;
     margin: auto;
@@ -21,6 +28,7 @@
     padding: 20px;
 }
 .map p.more_info {
+    display: inline;
     margin-left: 50px;
 }
 .map .picture {
