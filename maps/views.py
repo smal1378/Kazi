@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Map
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect, HttpResponseBadRequest
 from django.urls import reverse
 
@@ -46,11 +47,27 @@ def login_view(request):
         return render(request, "maps/login.html", {"error": 0})
 
 
-def profile_view(request):
-    pass
-
-
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse("login"))
 
+
+def signup_view(request):
+    if request.user.is_authenticated:
+        user = request.user.username
+    else:
+        user = None
+    if request.method == "POST":
+        if User.objects.filter(username=request.POST["username"]).exists():
+            return render(request, "maps/signup.html", {"user": user, "error": 1})
+        if request.POST["password"] != request.POST["r_password"]:
+            return render(request, "maps/signup.html", {"user": user, "error": 2})
+        user = User.objects.create_user(username=request.POST["username"],
+                                        password=request.POST["password"])
+        login(request, user)
+        return HttpResponseRedirect(reverse("home"))
+    return render(request, "maps/signup.html", {"user": user, "error": None})
+
+
+def profile_view(request):
+    pass
