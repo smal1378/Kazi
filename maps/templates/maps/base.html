@@ -10,17 +10,17 @@
 </head>
 <body>
     {% block header %}
-        <header>
-        <div>
-            {% if user is none %}
+    <header id="main_header">
+        <div id="header_container">
+            <div>
+                {% if user is none %}
                 <a href="{% url 'login' %}">ورود به حساب</a>
-            {% else %}
+                {% else %}
                 <a href="#">{{ user }}</a>
-            {% endif %}
+                {% endif %}
+            </div>
         </div>
-        <!-- .username -->
-        </header>>
-    <!-- .header -->
+    </header>
     {% endblock %}
 
     {% block content %}
