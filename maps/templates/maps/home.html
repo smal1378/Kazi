@@ -11,34 +11,37 @@
 </head>
 <body>
     {% block content %}
-    {% for map in maps %}
-    <div class="map">
-        <a href="#"><h2>{{ map.name }}</h2></a>
-        <div class="info">
-            <p>{{ map.notes }}</p>
-            <br>
-            <p class="more_info">تاریخ اضافه شدن: {{ map.time_created }}</p>
-            <p class="more_info">مساحت: {{ map.s }} هکتار</p>
-            <p class="more_info">مالک {{ map.user.username }}</p>
-        </div>
-        <!-- .info -->
-        <div class="picture">
-            here must be a picture
-        </div>
-        <!-- .picture -->
-    </div>
-    <!-- map -->
-    {% endfor %}
-    <div class="pagination">
-        page: {{page}}/ {{total_pages}}
-        <form method="post">
+    <div id="home_container">
+        {% for map in maps %}
+            <div class="map">
+                <a href="#"><h2>{{ map.name }}</h2></a>
+                <div class="info">
+                    <p>{{ map.notes }}</p>
+                    <br>
+                    <p class="more_info">تاریخ اضافه شدن: {{ map.time_created }}</p>
+                    <p class="more_info">مساحت: {{ map.s }} هکتار</p>
+                    <p class="more_info">مالک: {{ map.user.username }}</p>
+                </div>
+                <!-- .info -->
+                <div class="picture">
+                    here must be a picture
+                </div>
+                <!-- .picture -->
+            </div>
+            <!-- map -->
+        {% endfor %}
+        <div class="pagination">
+            <p>صفحه: {{page}}/ {{total_pages}}</p>
+            <form method="post">
             {% csrf_token %}
-            <button name="next" id="next">Next</button>
-            <button name="prev" id="prev">Prev</button>
+            <button name="next" id="next">بعدی</button>
+            <button name="prev" id="prev">قبلی</button>
             <input type="hidden" name="page" value="{{page}}">
-        </form>
-    </div>
+            </form>
+        </div>
     <!--pagination -->
+    </div>
+    <!-- #home_container -->
     {% endblock %}
 
 </body>

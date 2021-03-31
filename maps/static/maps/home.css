@@ -5,11 +5,16 @@
 a {
     text-decoration: none;
 }
+#home_container {
+    max-width: 1000px;
+    margin: auto;
+}
 .map {
     border: green 1px solid;
     padding: 30px;
     margin: 30px;
     overflow: hidden;
+    background: none white;
 }
 .map h2 {
     text-align: center;
