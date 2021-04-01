@@ -11,7 +11,7 @@
 <body>
     {% block header %}
     <header id="main_header">
-        <div id="header_container">
+        <div class="base-container">
             <div>
                 {% if user is none %}
                 <a href="{% url 'login' %}">ورود به حساب</a>
@@ -27,7 +27,12 @@
     {% endblock %}
 
     {% block footer %}
-    <footer>
+    <footer id="main-footer">
+        <div class="base-container">
+            <a href="#"><i class="fab fa-instagram fa-3x"></i></a>
+            <a href="#"><i class="fab fa-telegram-plane fa-3x"></i></a>
+            <a href="#"><i class="fab fa-github fa-3x"></i></a>
+        </div>
 
     </footer>
     {% endblock %}

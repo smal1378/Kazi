@@ -1,29 +1,47 @@
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     direction: rtl;
     box-sizing: border-box;
 }
+
+/* Main Styling*/
 a {
     text-decoration: none;
 }
+
 body {
     font-family: segoe ui, sans-serif;
     background: url("images/background.jpg") repeat;
 }
-#main_header {
-    background-color: green;
-}
-#header_container {
-    max-width: 800px;
+
+/* utility */
+.base-container {
+    max-width: 900px;
     margin: auto;
     overflow: auto;
 }
+
+/* header */
+#main_header {
+    background-color: #75bd09;
+    padding: 40px;
+}
+
 header a {
     color: white;
 }
-footer {
-    background-color: green;
-    padding: 40px;
+
+/* footer */
+#main-footer {
+    background-color: #75bd09;
     margin-top: 40px;
+    padding: 40px;
+}
+
+#main-footer a {
+    color: #fff;
+    padding-left: 20px;
+    float: left;
 }

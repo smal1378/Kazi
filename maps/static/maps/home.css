@@ -3,18 +3,25 @@
     margin: auto;
 }
 .map {
-    border: green 1px solid;
-    padding: 30px;
+    border: 2px solid green;
+    border-radius: 15px;
     margin: 30px;
     overflow: hidden;
-    background: none white;
+    background: none #fff;
 }
 .map h2 {
     text-align: center;
+    margin: 20px auto;
+    line-height: 30px;
+}
+.map h2 a {
+    color: green;
+    font-weight: bold;
+    display: inline-block;
+    padding-bottom: 10px;
 }
 .map .picture, .info {
     float: right;
-    border: black 1px solid;
 }
 .map .info {
     width: 70%;
@@ -22,11 +29,30 @@
 }
 .map p.more_info {
     margin-left: 50px;
+    border-top: 1px solid #75bd09;
+    padding: 20px 0;
+    font-size: 14px;
 }
 .map .picture {
     width: 30%;
-    height: 200px;
+    height: 230px;
 }
 .pagination {
     text-align: center;
+}
+
+.pagination p {
+    padding-bottom: 10px;
+}
+.pagination button {
+    text-align: center;
+    padding: 5px;
+    width: 60px;
+    height: 40px;
+    border-radius: 40%;
+    border: 1px solid green;
+    background-color: #eee;
+}
+.pagination button span {
+    font-size: 20px;
 }
