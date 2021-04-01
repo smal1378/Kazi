@@ -6,6 +6,7 @@
     {% load static %}
     {% block link_css %}
     <link rel="stylesheet" href="{% static 'maps/home.css' %}">
+    <script src="https://kit.fontawesome.com/408c969056.js" crossorigin="anonymous"></script>
     {% endblock %}
     <title>{% block title %} Kazi | Home {% endblock %}</title>
 </head>
@@ -14,7 +15,7 @@
     <div id="home_container">
         {% for map in maps %}
             <div class="map">
-                <a href="#"><h2>{{ map.name }}</h2></a>
+                <h2><a href="#">{{ map.name }}</a></h2>
                 <div class="info">
                     <p>{{ map.notes }}</p>
                     <br>
@@ -31,13 +32,14 @@
             <!-- map -->
         {% endfor %}
         <div class="pagination">
-            <p>صفحه: {{page}}/ {{total_pages}}</p>
+            <p>صفحه {{page}}/ {{total_pages}}</p>
             <form method="post">
             {% csrf_token %}
-            <button name="next" id="next">بعدی</button>
-            <button name="prev" id="prev">قبلی</button>
+            <button name="next" id="next"><i class="fas fa-chevron-right"></i> بعدی</button>
+            <button name="prev" id="prev">قبلی <i class="fas fa-chevron-left"></i></button>
             <input type="hidden" name="page" value="{{page}}">
             </form>
+
         </div>
     <!--pagination -->
     </div>
