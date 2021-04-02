@@ -2,12 +2,13 @@
 * {
     margin: 0;
     padding: 0;
+    direction: rtl;
+    box-sizing: border-box;
 }
 header {
     background-color: green;
     padding: 50px;
     direction: rtl;
-    box-sizing: border-box;
 }
 
 /* Main Styling*/

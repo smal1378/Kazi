@@ -4,9 +4,8 @@
     {% extends "maps/base.html" %}
     <meta charset="UTF-8">
     {% load static %}
-    {% block link_css %}
+    {% block link %}
     <link rel="stylesheet" href="{% static 'maps/home.css' %}">
-    <script src="https://kit.fontawesome.com/408c969056.js" crossorigin="anonymous"></script>
     {% endblock %}
     <title>{% block title %} Kazi | Home {% endblock %}</title>
 </head>
@@ -25,7 +24,7 @@
                 </div>
                 <!-- .info -->
                 <div class="picture">
-                    here must be a picture
+                    <img src="{% static 'images/model.png' %}" alt="model picture">
                 </div>
                 <!-- .picture -->
             </div>

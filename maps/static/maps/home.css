@@ -2,13 +2,20 @@
     direction: rtl;
     box-sizing: border-box;
 }
+
+body {
+    color: #333;
+}
+
 a {
     text-decoration: none;
 }
+
 #home_container {
     max-width: 1000px;
     margin: auto;
 }
+
 .map {
     border: 2px solid green;
     border-radius: 15px;
@@ -16,34 +23,43 @@ a {
     overflow: hidden;
     background: none #fff;
 }
+
 .map h2 {
     text-align: center;
     margin: 20px auto;
     line-height: 30px;
 }
+
 .map h2 a {
-    color: green;
+    color: #75bd09;
     font-weight: bold;
     display: inline-block;
-    padding-bottom: 10px;
+    padding: 10px;
 }
+
+.map h2 a:hover {
+    font-size: 28px;
+}
+
 .map .picture, .info {
     float: right;
 }
+
 .map .info {
-    width: 70%;
+    width: 50%;
     padding: 20px;
 }
+
 .map p.more_info {
-    margin-left: 50px;
     border-top: 1px solid #75bd09;
     padding: 20px 0;
     font-size: 14px;
 }
 .map .picture {
-    width: 30%;
+    width: 50%;
     height: 230px;
 }
+
 .pagination {
     text-align: center;
 }

@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% extends "maps/base.html" %}
     <meta charset="UTF-8">
-    <title>Kazi - Signup</title>
+    {% load static %}
+    {% block link %}
+    <link rel="stylesheet" href="{% static 'maps/signup.css' %}">
+    {% endblock %}
+    <title>{% block title %}Kazi | Signup{% endblock %}</title>
 </head>
 <body>
-    <form method="post">
-        {% csrf_token %}
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username">
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password">
-        <label for="r_password">Repeat Password:</label>
-        <input type="password" name="r_password" id="r_password">
-        {% if error == 1 %}
-        Username already exists.
-        {% elif error == 2 %}
-        Passwords didn't match.
-        {% endif %}
-        <button type="submit">Signup</button>
-    </form>
+    {% block content %}
+        <form method="post">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password">
+            <label for="r_password">Repeat Password:</label>
+            <input type="password" name="r_password" id="r_password">
+            {% if error == 1 %}
+            Username already exists.
+            {% elif error == 2 %}
+            Passwords didn't match.
+            {% endif %}
+            <button type="submit">Signup</button>
+        </form>
+    {% endblock %}
 </body>
 </html>
