@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% extends "maps/base.html" %}
     <meta charset="UTF-8">
-    <title>Kazi Login</title>
+    <title>{% block title %}Kazi | login{% endblock %}</title>
+    {% load static %}
+    {% block link %}
+    <link rel="stylesheet" href="{% static 'maps/login.css' %}">
+    {% endblock %}
 </head>
 <body>
-    <form method="post">
-        {% csrf_token %}
-        <div>
-            <label for="username">Username:</label>
-            <input name="username" id="username" type="text">
-        </div>
-        <div>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password">
-        </div>
-        {% if error %}
-        <div style="color: red">
-            invalid username
-        </div>
-        {% endif %}
-        <button type="submit">Login</button>
-    </form>
+    {% block content %}
+    <div id="login-content">
+        <form method="post">
+            {% csrf_token %}
+            <div>
+                <label for="username">نام کاربری</label><br>
+                <input name="username" id="username" type="text">
+            </div>
+            <div>
+                <label for="password">رمز عبور</label><br>
+                <input type="password" id="password" name="password">
+            </div>
+            {% if error %}
+            <div style="color: red">
+                invalid username
+            </div>
+            {% endif %}
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    {% endblock %}
 </body>
 </html>

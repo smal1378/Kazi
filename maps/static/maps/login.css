@@ -1,0 +1,26 @@
+#login-content {
+    max-width: 500px;
+    margin: 50px auto;
+    text-align: right;
+}
+
+#login-content form {
+
+}
+
+#login-content form label {
+    display: block;
+}
+
+#login-content form input {
+    display: block;
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    border: 2px solid #75bd09;
+}
+
+#login-content form input:focus {
+    outline: none;
+}
